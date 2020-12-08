@@ -1,0 +1,439 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Алексей Бартош — персональный сайт</title>
+	<meta charset="utf-8">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"></script>
+
+	<style type="text/css">
+
+		* {
+	        font-family: 'Roboto', sans-serif;
+	      }
+	    html, body {
+	        margin: 0;
+	        padding: 0;
+	      }
+
+      	h2 {
+	        font-size: 36px;
+	      }
+
+	    h3 {
+	      	font-size: 26px;
+	      	margin-top: 0px;
+
+	      }
+
+	    .fixed-container {
+	      width: 1000px;
+
+	      padding: 0 100px;
+	      margin: 0 auto;
+	    }
+
+	    header {
+	      height: 120px;
+	      display: flex;
+	      justify-content: space-between;
+	      align-items: center;
+	    }
+
+	    nav a {
+	      font-size: 20px;
+	      margin-right: 50px;
+	      color: black;
+	      text-decoration: none;
+	    }
+
+	    nav a:hover {
+	      text-decoration: underline;
+	    }
+
+	    .phone {
+	      font-size: 20px;
+	      font-weight: bold;
+	      margin-right: 20px;
+	    }
+
+	    .order-call {
+	      padding: 15px 50px;
+	      border: 1px solid #000000;
+	      box-sizing: border-box;
+	      border-radius: 10px;
+	      background-color: transparent;
+	      cursor: pointer;
+	    }
+
+	    .main-block {
+	      display: flex;
+	      justify-content: space-between;
+	      align-items: stretch;
+	      height: 500px;
+	    }
+
+	    .photo-container {
+	      width: 500px;
+	      background-image: url('/img/man.png');
+	      background-position: right;
+	      center;
+	      background-repeat: no-repeat;
+	      background-size: 480px;
+	    }
+
+	    .main-button {
+	      background-color:blue;
+	      color: white;
+	    }
+
+	    .about-block>h1 {
+	      padding-top: 150px;
+	      font-weight: bold;
+	      font-size: 30px;
+	    }
+
+	    .about-block>button {
+	      margin-top: 25px;
+	    }
+
+	      .service-icons {
+	    margin: 60px 0;
+	    display: flex;
+	    justify-content: space-between;
+	    }
+
+	    .service-item {
+	    display: flex;
+	    flex-direction: column;
+	    align-items: flex-start;
+	    justify-content: flex-start;
+	    font-size: 14px;
+	    width: 250px;
+	    }
+
+	    .service-item img {
+	    height: 150px;
+	    margin-bottom: 20px;
+	    }
+
+	    .portfolio-icons {
+	      margin: 60px 0;
+	      display: flex;
+	      justify-content: space-between;
+	    }
+
+	    .portfolio-item {
+	      display: flex;
+	      flex-direction: column;
+	      align-items: flex-start;
+	      justify-content: flex-start;
+	      font-size: 14px;
+	      width: 250px;
+	    }
+
+	    .portfolio-item img {
+	      height: 150px;
+	      margin-bottom: 20px;
+	    }
+
+
+
+	    .blue-block {
+	      margin-top: 60px;
+	      background-color: blue;
+	      color: white;
+	    }
+
+	    .blue-container {
+	    	font-size: 30px;
+	    	font-weight: bold;
+	      padding: 60px 0;
+	    }
+	    
+	  .footer {
+	      display: flex;
+	      justify-content: space-between;
+	      align-items: flex-start;
+	      margin: 50px 0;
+	      }
+
+
+
+	    .footer-menu {
+	      display: flex;
+	      flex-direction: column;
+	      justify-content: flex-start;
+	      align-items: flex-start;
+	    }
+
+	    .footer-menu a {
+	      margin-bottom: 15px;
+	    }
+
+	    .social-links {
+	      display: flex;
+	      justify-content: flex-end;
+	      align-items: center;
+	      margin-top: 25px;
+	    }
+
+	    .social-links a {
+
+	      margin-left: 20px;
+	    }
+
+	    .social-links a img {
+
+	      height: 24px;
+	    }
+
+        .popup-container {
+      	position: fixed;
+      	width: 100%;
+      	height: 100%;
+      	z-index: 100;
+      	background-color: #61616187;
+      	display: none;
+      	justify-content: center;
+      	align-items: center;
+      }
+
+      .popup {
+      	background-color: white;
+      	border-radius: 10px;
+      	width: 300px;
+      	padding: 20px;
+      	position: relative;
+      }
+
+      .close {
+      	position: absolute;
+      	right: 20px;
+      	top: 20px;
+      	width: 30px;
+      	height: 30px;
+      	background-image: url('/img/cancel.png');
+      	background-repeat: no-repeat;
+      	background-position: center;
+      }
+
+      .popup-form {
+      	display: flex;
+      	flex-direction: column;
+      	align-items: flex-start;
+      	justify-content: flex-start;
+      	margin-bottom: 40px;
+      }
+
+      .popup-form label {
+      	font-size: 20px;
+      	font-weight: bold;
+      }
+
+      .popup-form input[type="text"] {
+      	display: block;
+      	margin: 10px 0;
+      	font-size: 20px;
+      }
+
+      .popup-container {
+      	display: none;
+      	justify-content: center;
+      	align-items: center;
+      	position: fixed;
+      	width: 100%;
+      	height: 100%;
+      	z-index: 100;
+      	background-color: #61616187;
+      }
+
+      .popup{
+      	background-color: white;
+      	border-radius: 10px;
+      	width: 300px;
+      	padding: 20px;
+      	position: relative;
+      }
+
+      .close {
+      	position: absolute;
+      	right: 20px;
+      	top: 20px;
+      	width: 30px;
+      	height: 30px;
+      	background-image: url('/img/cancel.png');
+      	background-repeat: no-repeat;
+      	background-position: center;
+
+      }
+
+      .popup-form {
+      	display: flex;
+      	flex-direction: column;
+      	align-items: flex-start;
+      	justify-content: flex-start;
+      	margin-bottom: 40px;
+      }
+
+      .popup-form label{
+      	font-size: 20px;
+      	font-weight: bold;
+
+      }
+
+      .popup-form input[type="text"]{
+      	display: block;
+      	margin: 10px 0;
+      	font-size: 20px;
+
+      }
+
+    </style>
+
+</head>
+<body>
+
+	<!-- Всплывающее окно -->
+	<div class="popup-container">
+		<div class="popup">
+			<a class="close" href="#"></a>
+			<h3>Оставьте заявку</h3>
+			<form class="popup-form">
+				<label>
+					Имя:
+					<input type="text" name="name">
+				</label>
+				<label>
+					Телефон:
+					<input type="text" name="phone">
+				</label>
+			</form>
+			<button class="order-call">Отправить</button>
+
+		</div>
+	</div>
+
+
+	<header class="fixed-container">
+		<nav>
+			<a href="#">Услуги</a>
+			<a href="#">Портфолио</a>
+			<a href="#">Стоимость</a>
+		</nav>
+		<div>
+			<span class="phone">+375 33 666-68-84</span>
+			<button class="order-call">Заказать звонок</button>
+		</div>
+	</header>
+
+    <section class="fixed-container main-block">
+      <div class="about-block">
+		<h1 class="FIO">Алексей Бартош</h1>
+		<p>Frontend разработчик и веб-верстальщик</p>
+		<button class="button_textMe">Узнать больше</button>
+		</div>
+		<div class="photo-container">
+		</div>
+	</section>
+
+	<section class="fixed-container">
+		<h2>
+			Что я делаю
+		</h2>
+		<div class="service-icons">
+			
+			<div class="service-item">
+				<img src="img/icons/1.png">
+				Верстка лендинг страниц<br>и сайтов любой сложности</div>
+			
+			<div class="service-item">
+				<img src="img/icons/2.png">
+				Адаптивная верстка под<br>все браузеры и устройства</div>
+			
+			<div class="service-item">
+				<img src="img/icons/3.png">
+				Frontend разработка<br>и программирование</div>
+
+			<div class="service-item">
+				<img src="img/icons/4.png">
+				Исправление и доработка<br>существующей верстки</div>
+		</div>
+		<button class="order-call">
+			Узнать стоимость
+		</button>
+	</section>
+
+<!-- портфолио -->
+		<section class="fixed-container">
+			<div class="my-works">
+				<h2>
+					Примеры работ
+				</h2>
+				<div class="portfolio-icons">
+				
+					<div class="portfolio-item">
+						<img src="img/examples/1.png">
+							Сайт психолога Веры Антоновой</div>
+					
+					<div class="portfolio-item">
+						<img src="img/examples/2.png">
+							Сайт магазина детской одежды</div>
+					
+					<div class="portfolio-item">
+						<img src="img/examples/3.png">
+							Сайт магазина рыболов</div>
+				</div>
+				<button class="order-call">
+					Заказать проект
+				</button>
+			</div>
+		</section>
+
+
+<!-- синяя зона -->
+		<section class="blue-block">
+			<div class="my-works">
+				<div class="fixed-container blue-container">
+					Адаптивная верстка под все устройства<br>и браузеры от 10 руб. всегда за 4 часа.
+				</div>
+			</div>
+		</section>
+
+</body>
+
+
+<footer class="fixed-container">
+	<div class="footer">
+
+		<nav class="footer-menu">
+				<a href="#">Услуги</a>
+				<a href="#">Портфолио</a>
+				<a href="#">Стоимость</a>
+		</nav>
+
+		<div class="contacts">
+			<p>alextrem777@gmail.com</p>
+			<p>+375336666884</p>
+		</div>
+
+		<div class="social-container">
+			<button class="order-call">Заказать звонок</button>
+				<div class="social-links">
+					<a href="https://vk.com/alex_trem7"><img src="/img/social/fb.png"></a>
+					<a href="https://vk.com/alex_trem7"><img src="/img/social/vk.png"></a>
+					<a href="https://t.me/alebarrr"><img src="/img/social/telegram.png"></a>
+					<a href="https://instagram.com/alebar_official"><img src="/img/social/inst.png"></a>
+				</div>
+		</div>
+
+	</div>
+	
+</footer>
+
+
+
+</html>
